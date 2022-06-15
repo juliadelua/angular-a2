@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { JuliaTasksService } from '../julia-tasks.service';
 
 @Component({
   selector: 'app-julia-home',
   templateUrl: './julia-home.component.html',
-  styleUrls: ['./julia-home.component.css']
+  styleUrls: ['./julia-home.component.css'],
 })
-export class JuliaHomeComponent implements OnInit {
+export class JuliaHomeComponent {
+  constructor(private serv: JuliaTasksService) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  getTotal() {
+    return this.serv.getTasksTotal();
   }
-
 }

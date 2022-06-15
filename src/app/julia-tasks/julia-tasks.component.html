@@ -1,1 +1,8 @@
-<input type="textfield" /> <button>Adicionar</button>
+<input type="textfield" [(ngModel)]="task" />
+<button (click)="adicionarTarefa()">Adicionar</button>
+<br /><br />
+<div *ngFor="let i of listaTarefas; let ix = index">
+  ({{ ix + 1 }}) {{ i }}
+  <button (click)="removerTarefa(ix)">X</button>
+  <br /><br />
+</div>
